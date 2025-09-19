@@ -9,7 +9,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
-    copy: typeof import('./src/components/Location copy.vue')['default']
+    copy: typeof import('./src/components/Header copy.vue')['default']
+    Header: typeof import('./src/components/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Impressie: typeof import('./src/components/Impressie.vue')['default']
     Location: typeof import('./src/components/Location.vue')['default']

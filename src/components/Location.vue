@@ -1,11 +1,11 @@
 <template>
   <v-sheet
     color="#FFFFFFE0"
-    class="pa-8"
+    class="pa-8 elevation-12"
   >
     <v-row>
       <v-col cols="12" md="5">
-        <div class="d-flex-row fill-height justify-center align-center">
+        <div class="d-flex-row fill-height justify-md-center align-center">
           <div class="d-flex-column ga-4">
             <div class="d-flex-column">
               <span class="text-h6">Locatie</span>

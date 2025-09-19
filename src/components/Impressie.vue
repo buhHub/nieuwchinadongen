@@ -2,29 +2,39 @@
   <div class="impressie-container">
     <v-sheet
       color="#FFFFFFFFA0"
-      width="60%"
+      :width="mdAndUp ? '60%' : null"
       height="60vh"
-      class="d-flex justify-center align-center pa-4"
+      class="d-flex justify-center align-center pa-4 elevation-12"
     >
-      <div class="d-flex-column ga-2" style="max-width: 50%;">
+      <div class="d-flex-column ga-2" style="max-width: 60%;">
         <span class="text-h6">Kwaliteit is onze reclame</span>
         <span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, saepe nesciunt quisquam et ab temporibus nobis delectus perspiciatis quae sapiente quam placeat eum alias amet quia sint officia cupiditate earum.
         </span>
+        <v-img
+          v-if="!mdAndUp"
+          :src="Impressie1"
+          aspect-ratio="2"
+          cover
+        ></v-img>
       </div>
     </v-sheet>
-      <v-img
-        :src="Impressie1"
-        width="45%"
-        aspect-ratio="1"
-        cover
-        class="impressie-foto-container"
-      ></v-img>
+    <v-img
+      v-if="mdAndUp"
+      :src="Impressie1"
+      width="45%"
+      aspect-ratio="1"
+      cover
+      class="impressie-foto-container elevation-24"
+    ></v-img>
   </div>
 </template>
 
 <script setup>
+  import { useDisplay } from 'vuetify'
   import Impressie1 from '../assets/impressie_foto_1.jpg';
+
+  const { mdAndUp } = useDisplay();
 </script>
 
 <style scoped lang="scss">

@@ -4,8 +4,6 @@
       color="transparent"
       flat
       class="d-flex-row justify-start"
-      scroll-behavior="inverted hide"
-      :scroll-threshold="windowHeight"
     >
       <v-img
         :src="logoNieuwChina"
@@ -14,10 +12,9 @@
         inline
       ></v-img>
     </v-app-bar>
-    <Header></Header>
     <v-container max-width="1080" class="d-flex-column ga-16">
-      <Impressie></Impressie>
-      <Location></Location>
+      <span class="text-h5">Menu</span>
+
     </v-container>
   </div>
 </template>
@@ -28,6 +25,4 @@
   import Header from '../components/Header';
   import Location from '../components/Location';
   import Impressie from '../components/Impressie';
-  
-  const windowHeight = window.innerHeight;
 </script>
