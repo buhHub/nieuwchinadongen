@@ -60,6 +60,15 @@
               <span v-if="item.subtext" class="text-caption pl-2">({{ item.subtext }})</span>
               <div class="dots mx-2"></div>
               <span>€ {{ item.price.toFixed(2) }}</span>
+              <div v-if="shoppingStore.hasItem(item.id)" class="d-flex-row ga-2">
+                <v-btn size="x-small" variant="tonal" class="ml-2 mb-1" @click="shoppingStore.decreaseItem(item.id)">
+                  <v-icon>mdi-minus</v-icon>
+                </v-btn>
+                <span>{{ shoppingStore.getByItemId(item.id)?.amount }}</span>
+              </div>
+              <v-btn size="x-small" variant="tonal" class="ml-2 mb-1" @click="shoppingStore.addItem(item.id)">
+                <v-icon>mdi-plus</v-icon>
+              </v-btn>
             </div>
           </div>
         </div>
@@ -79,6 +88,9 @@
 
   const router = useRouter();
   const route = useRoute();
+
+  import { useShoppingStore } from '../stores/shopping';
+  const shoppingStore = useShoppingStore();
 </script>
 
 <style lang="scss" scoped>
