@@ -38,9 +38,14 @@
       </div>
     </v-app-bar>
     <Header></Header>
-    <v-container max-width="1080" class="d-flex-column ga-16">
+    <v-container max-width="1080" class="d-flex-column ga-16 mb-8">
       <Impressie></Impressie>
-      <Location></Location>
+      <FadeInOnScroll left>
+        <Location></Location>
+      </FadeInOnScroll>
+      <FadeInOnScroll left>
+        <Contact></Contact>
+      </FadeInOnScroll>
     </v-container>
   </div>
 </template>
@@ -49,8 +54,10 @@
   import logoNieuwChina from '../assets/logo_nieuwchina.png';
 
   import Header from '../components/Header';
-  import Location from '../components/Location';
   import Impressie from '../components/Impressie';
+  import Location from '../components/Location';
+  import Contact from '../components/Contact';
+  import FadeInOnScroll from '../components/FadeInOnScroll';
   
   const windowHeight = window.innerHeight;
 

@@ -15,6 +15,7 @@
             </div>
             <div class="d-flex-row">
               <v-btn
+                variant="tonal"
                 prepend-icon="mdi-directions"
                 href="https://www.google.com/maps/dir/your+location/Nieuw+China+Dongen,+Hoge+Ham+105,+5104+JC+Dongen/"
                 target="_blank"

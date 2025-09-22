@@ -9,7 +9,9 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
-    copy: typeof import('./src/components/Header copy.vue')['default']
+    Contact: typeof import('./src/components/Contact.vue')['default']
+    copy: typeof import('./src/components/Location copy.vue')['default']
+    FadeInOnScroll: typeof import('./src/components/FadeInOnScroll.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Impressie: typeof import('./src/components/Impressie.vue')['default']
