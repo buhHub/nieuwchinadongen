@@ -10,7 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
     Contact: typeof import('./src/components/Contact.vue')['default']
-    copy: typeof import('./src/components/Location copy.vue')['default']
+    copy: typeof import('./src/components/Header copy.vue')['default']
     FadeInOnScroll: typeof import('./src/components/FadeInOnScroll.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
@@ -18,5 +18,6 @@ declare module 'vue' {
     Location: typeof import('./src/components/Location.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Wallpaper: typeof import('./src/components/Wallpaper.vue')['default']
   }
 }

@@ -45,7 +45,7 @@
 
 <style scoped>
   .is-visible {
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
     opacity: 1;
     transform: translateY(0);
   }
