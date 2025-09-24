@@ -4,10 +4,10 @@
       <v-sheet
         color="#FFFFFFFFA0"
         :width="mdAndUp ? '60%' : null"
-        height="60vh"
-        class="d-flex justify-center align-center pa-4 elevation-12"
+        :height="mdAndUp ? '60vh' : null"
+        class="d-flex justify-center align-center pa-8 elevation-12"
       >
-        <div class="d-flex-column ga-2" style="max-width: 60%;">
+        <div class="d-flex-column ga-2" :style="`max-width: ${mdAndUp ? '60%' : '100%'};`">
           <span class="text-h6">Kwaliteit is onze reclame</span>
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, saepe nesciunt quisquam et ab temporibus nobis delectus perspiciatis quae sapiente quam placeat eum alias amet quia sint officia cupiditate earum.
@@ -17,6 +17,7 @@
             :src="Impressie1"
             aspect-ratio="2"
             cover
+            class="mt-2"
           ></v-img>
         </div>
       </v-sheet>

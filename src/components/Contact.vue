@@ -5,7 +5,7 @@
     height="24rem"
   >
     <v-row>
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <div class="d-flex-row fill-height justify-md-center">
           <div class="d-flex-column ga-4">
             <div class="d-flex-column">
@@ -17,9 +17,9 @@
           </div>
         </div>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <div class="d-flex-row fill-width fill-height">
-          <div class="d-flex-column justify-md-center align-center fill-width">
+          <div class="d-flex-column justify-md-center align-md-center fill-width">
             <div>
               <span class="text-h6 fill-width">Openingstijden</span>
               <div>
@@ -29,7 +29,8 @@
                   class="d-flex-row justify-space-between ga-4"
                   :class="{ 'font-weight-bold': dayName === entry.day}"
                 >
-                  <span>{{ entry.day }}:</span><span>{{ entry.time }}</span>
+                  <span>{{ entry.day }}:</span>
+                  <span>{{ entry.time }}</span>
                 </div>
               </div>
             </div>

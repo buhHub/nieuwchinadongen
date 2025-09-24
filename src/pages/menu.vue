@@ -1,46 +1,12 @@
 <template>
   <div class="d-flex-column ga-8">
-    <v-app-bar
-      color="background"
-      class="d-flex-row justify-start px-4"
+    <Wallpaper></Wallpaper>
+    <AppBar
       scroll-behavior="elevate"
       scroll-threshold="20"
-    >
-      <v-img
-        :src="logoNieuwChina"
-        height="48"
-        width="120"
-        inline
-        class="cursor-pointer"
-        @click="router.push({ path: '/' })"
-      ></v-img>
-      <v-spacer></v-spacer>
-      <div class="d-flex-row ga-4">
-        <v-btn class="flex-grow-1" :disabled="route.path === '/menu'" variant="tonal" to="/menu">
-          Menu bekijken
-        </v-btn>
-        <v-btn class="flex-grow-1" variant="tonal">
-          Afhalen
-          <v-dialog activator="parent" max-width="240">
-            <v-card>
-              <v-list>
-                <v-list-item href="https://foodtown.nl/nieuwchina" target="_blank">
-                  Online
-                </v-list-item>
-                <v-list-item href="tel:0162-312772">
-                  Bellen
-                </v-list-item>
-              </v-list>
-            </v-card>
-          </v-dialog>
-        </v-btn>
-        <v-btn class="flex-grow-1" variant="tonal" href="tel:0162-312772">
-          Reserveren
-        </v-btn>
-      </div>
-    </v-app-bar>
+    ></AppBar>
     <v-container max-width="1080" class="d-flex-column ga-16">
-      <span class="text-h5">Menu</span>
+      <!-- <span class="text-h5">Menu</span> -->
       <div class="d-flex-column ga-8">
         <div
           v-for="entry in menuData"
@@ -56,17 +22,21 @@
               :key="item.id"
               class="d-flex-row justify-space-between align-end"
             >
-              <span>{{ item.id }}. {{ item.text }}</span>
-              <span v-if="item.subtext" class="text-caption pl-2">({{ item.subtext }})</span>
+              <div class="d-flex flex-md-row flex-column menu-item-title-container">
+                <span>{{ item.id }}. {{ item.text }}</span>
+                <span v-if="item.subtext" class="text-caption pl-2">
+                  ({{ item.subtext }})
+                </span>
+              </div>
               <div class="dots mx-2"></div>
-              <span>€ {{ item.price.toFixed(2) }}</span>
-              <div v-if="shoppingStore.hasItem(item.id)" class="d-flex-row ga-2">
+              <span class="align-self-start">€ {{ item.price.toFixed(2) }}</span>
+              <div v-if="shoppingStore.hasItem(item.id)" class="d-flex-row ga-2 align-self-start">
                 <v-btn size="x-small" variant="tonal" class="ml-2 mb-1" @click="shoppingStore.decreaseItem(item.id)">
                   <v-icon>mdi-minus</v-icon>
                 </v-btn>
                 <span>{{ shoppingStore.getByItemId(item.id)?.amount }}</span>
               </div>
-              <v-btn size="x-small" variant="tonal" class="ml-2 mb-1" @click="shoppingStore.addItem(item.id)">
+              <v-btn size="x-small" variant="tonal" class="ml-2 mb-1 align-self-start" @click="shoppingStore.addItem(item.id)">
                 <v-icon>mdi-plus</v-icon>
               </v-btn>
             </div>
@@ -94,6 +64,9 @@
 </script>
 
 <style lang="scss" scoped>
+  .menu-item-title-container {
+    max-width: 70%;
+  }
   .dots {
     flex-grow: 1;
     height: 1em;
