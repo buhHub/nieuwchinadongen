@@ -5,8 +5,48 @@
       scroll-behavior="elevate"
       scroll-threshold="20"
     ></AppBar>
-    <v-container max-width="1080" class="d-flex-column ga-16">
-      <!-- <span class="text-h5">Menu</span> -->
+    <v-container max-width="1080" class="d-flex-column ga-4">
+      <v-row>
+        <v-col
+          v-for="(menu, index) in voordeelmenuData"
+          :key="index"
+          cols="12"
+          md="6"
+        >
+          <v-card
+            :title="menu.id"
+            height="100%"
+          >
+            <template #title>
+              <div class="d-flex-row justify-space-between align-center">
+                <span>{{ menu.id }}</span>
+                <v-chip v-if="menu.person" prepend-icon="mdi-account" label>
+                  {{ menu.person[0] }} - {{ menu.person[1] }} personen
+                </v-chip>
+              </div>
+            </template>
+            <template #text>
+              <div class="d-flex-column">
+                <div
+                  v-for="(item, itemIndex) in menu.contents"
+                  :key="`${index}-${itemIndex}`"
+                  class="d-flex"
+                  :class="{
+                    'flex-row': !(item.subtitle?.length > 10),
+                    'flex-column': item.subtitle?.length > 10,
+                  }"
+                >
+                  <span>{{ item.title }}</span>
+                  <span v-if="item.subtitle" class="text-caption ml-2">
+                    ({{ item.subtitle }})
+                  </span>
+                </div>
+              </div>
+            </template>
+          </v-card>
+        </v-col>
+      </v-row>
+      <span class="text-h5 font-weight-bold">Afhaalmenu</span>
       <div class="d-flex-column ga-8">
         <div
           v-for="entry in menuData"
@@ -55,6 +95,7 @@
   import Impressie from '../components/Impressie';
 
   import menuData from '../consts/menu';
+  import voordeelmenuData from '../consts/voordeelmenus';
 
   const router = useRouter();
   const route = useRoute();
