@@ -4,7 +4,7 @@
     <v-fab icon app variant="tonal" position="bottom right">
       <v-icon v-if="shoppingStore.hasItems">mdi-basket</v-icon>
       <v-icon v-else>mdi-basket-outline</v-icon>
-      <v-dialog v-model="listDialog" activator="parent" :fullscreen="mobile">
+      <v-dialog v-model="listDialog" activator="parent" :fullscreen="mobile" max-width="640">
         <v-card>
           <div class="fill-width d-flex-row justify-space-between py-4 px-6 align-center">
             <div class="d-flex-column">
