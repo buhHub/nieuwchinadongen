@@ -1,5 +1,6 @@
 export const familieMenu = {
-  id: 'Familie Menu',
+  id: 'M1',
+  text: 'Familie Menu',
   contents: [
     { title: 'Mini loempia\'s', subtitle: '8 stuks' },
     { title: 'Kerry Ko', subtitle: '5 stuks' },
@@ -15,7 +16,8 @@ export const familieMenu = {
 };
 
 export const monthMenu = {
-  id: 'September Menu',
+  id: 'M2',
+  text: 'September Menu',
   contents: [
     { title: 'Mini loempia\'s', subtitle: '6 stuks' },
     { title: 'Saté Ajam', subtitle: '2 stuks' },
@@ -29,7 +31,8 @@ export const monthMenu = {
 };
 
 export const extraMenu = {
-  id: 'Extra Afhaalmenu',
+  id: 'M3',
+  text: 'Extra Afhaalmenu',
   contents: [
     { title: 'Mini loempia\'s', subtitle: '8 stuks' },
     { title: 'Siu Mei', subtitle: '4 stuks' },
@@ -47,7 +50,8 @@ export const extraMenu = {
 };
 
 export const snackBox = {
-  id: 'Nieuw China Snackbox',
+  id: 'M4',
+  text: 'Nieuw China Snackbox',
   contents: [
     { title: 'Mini loempia\'s' },
     { title: 'Tempura garnalen' },

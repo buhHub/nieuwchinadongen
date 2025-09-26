@@ -46,7 +46,7 @@
               <v-list>
                 <v-list-item
                   v-for="item in shoppingStore.getItems" :key="item.id"
-                  :title="`${item.id}. ${item.text}`"
+                  :title="`${item.id}. ${item.text ?? ''}`"
                 >
                   <template #append>
                     <div class="d-flex-row ga-2">

@@ -1,8 +1,12 @@
 // Utilities
 import { defineStore } from 'pinia'
 import menuData from '../consts/menu';
+import voordeelmenusData from '../consts/voordeelmenus';
 
-const menuItems = menuData.reduce((acc, sample) => [...acc, ...sample.items], [])
+const menuItems = [
+  ...menuData.reduce((acc, sample) => [...acc, ...sample.items], []),
+  ...voordeelmenusData,
+];
 
 export const useShoppingStore = defineStore('shopping', {
   persist: true,
@@ -15,6 +19,7 @@ export const useShoppingStore = defineStore('shopping', {
       this.timestamp = new Date();
     },
     addItem(itemId) {
+      console.log(menuItems);
       if (!itemId) return;
       const itemIndex = this.items.findIndex((i) => i.id === itemId);
       if (itemIndex >= 0) {
