@@ -9,15 +9,20 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppBar: typeof import('./src/components/AppBar.vue')['default']
+    AppBarAdmin: typeof import('./src/components/admin/AppBarAdmin.vue')['default']
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
     Contact: typeof import('./src/components/Contact.vue')['default']
+    copy: typeof import('./src/components/admin/MenuAdmin copy.vue')['default']
     FadeInOnScroll: typeof import('./src/components/FadeInOnScroll.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Impressie: typeof import('./src/components/Impressie.vue')['default']
     Location: typeof import('./src/components/Location.vue')['default']
+    Menu: typeof import('./src/components/admin/menu.vue')['default']
+    MenuAdmin: typeof import('./src/components/admin/MenuAdmin.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VoordeelmenusAdmin: typeof import('./src/components/admin/VoordeelmenusAdmin.vue')['default']
     Wallpaper: typeof import('./src/components/Wallpaper.vue')['default']
   }
 }

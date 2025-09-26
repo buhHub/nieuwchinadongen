@@ -115,8 +115,8 @@
     cursor: pointer;
   }
   .square-button {
-    min-width: 28px;
-    padding: 0;
+    min-width: 36px !important;
+    padding: 0 !important;
   }
   </style>
   

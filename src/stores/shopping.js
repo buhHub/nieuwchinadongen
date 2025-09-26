@@ -31,6 +31,7 @@ export const useShoppingStore = defineStore('shopping', {
           amount: 1,
         });
       }
+      this.updateTimestamp();
     },
     decreaseItem(itemId) {
       if (!itemId) return;
@@ -43,10 +44,12 @@ export const useShoppingStore = defineStore('shopping', {
           this.items.splice(itemIndex, 1, { ...item, amount: item.amount - 1 });
         }
       }
+      this.updateTimestamp();
     },
     removeItem(itemId) {
       if (!itemId) return;
       this.items = this.items.filter((i) => i.id !== itemId);
+      this.updateTimestamp();
     },
     resetState() {
       this.timestamp = null;
