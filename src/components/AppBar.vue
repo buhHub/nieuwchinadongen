@@ -23,6 +23,7 @@
               :title="btn.text"
               :disabled="btn.disabled"
               :href="btn.href"
+              :to="btn.to"
               @click="btn['v-on:click']"
             ></v-list-item>
           </v-list>
