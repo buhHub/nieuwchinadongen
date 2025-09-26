@@ -16,6 +16,7 @@
           <v-card
             :title="menu.id"
             height="100%"
+            class="d-flex flex-column"
           >
             <template #title>
               <div class="d-flex-row justify-space-between align-center">
@@ -43,21 +44,23 @@
                 </div>
               </div>
             </template>
-            <div class="d-flex-row justify-space-between align-center px-6 pb-4 ga-8">
-              <div class="d-flex-row ga-2 align-center">
-                <template v-if="shoppingStore.hasItem(menu.id)">
-                  <v-btn size="x-small" variant="tonal" @click="shoppingStore.decreaseItem(menu.id)">
-                    <v-icon>mdi-minus</v-icon>
+            <div class="d-flex-column justify-end flex-grow-1 px-6 pb-4 ga-8">
+              <div class="d-flex-row fill-width justify-space-between align-center">
+                <div class="d-flex-row ga-2 align-center">
+                  <template v-if="shoppingStore.hasItem(menu.id)">
+                    <v-btn size="x-small" variant="tonal" @click="shoppingStore.decreaseItem(menu.id)">
+                      <v-icon>mdi-minus</v-icon>
+                    </v-btn>
+                    <span>{{ shoppingStore.getByItemId(menu.id)?.amount }}</span>
+                  </template>
+                  <v-btn size="x-small" variant="tonal" @click="shoppingStore.addItem(menu.id)">
+                    <v-icon>mdi-plus</v-icon>
                   </v-btn>
-                  <span>{{ shoppingStore.getByItemId(menu.id)?.amount }}</span>
-                </template>
-                <v-btn size="x-small" variant="tonal" @click="shoppingStore.addItem(menu.id)">
-                  <v-icon>mdi-plus</v-icon>
-                </v-btn>
+                </div>
+                <span class="text-h6" style="min-width: fit-content;">
+                  € {{ menu.price.toFixed(2) }}
+                </span>
               </div>
-              <span class="text-h6" style="min-width: fit-content;">
-                € {{ menu.price.toFixed(2) }}
-              </span>
             </div>
           </v-card>
         </v-col>
